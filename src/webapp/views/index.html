@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Домашняя страница</title>
+  <style>
+    body {
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+
+<div>
+  <th:block th:each="msg : ${messages}">
+    <h1 th:text="${msg}"></h1>
+  </th:block>
+</div>
+<a href="http://localhost:8080/spring_mvc_war_exploded/cars">Car List</a>
+<br>
+<br>
+<a href="http://localhost:8080/spring_mvc_war_exploded/cars?count=3">СПИСОК ИЗ 3 МАШИН</a>
+<br>
+<br>
+<a href="http://localhost:8080/spring_mvc_war_exploded/cars?count=7">СПИСОК ИЗ 7 МАШИН</a>
+
+</body>
+</html>
