@@ -1,5 +1,7 @@
-.table {
-    border-collapse: collapse;
-    width: 100%;
+.wrapper {
+    margin: 0 auto;
 }
 
+.table {
+    width: 100%;
+}

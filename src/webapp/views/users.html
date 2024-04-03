@@ -3,27 +3,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>users</title>
+    <title>Users</title>
 <!--    <link rel="stylesheet" th:href="@{src/main/resources/style.css}">-->
+<style>
+    .wrapper {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .table {
+        width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a.button {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        color: #333;
+        transition: 0.2s;
+    }
+
+    a.button:hover {
+        background-color: #ddd;
+        color: #000;
+    }
+</style>
 
 </head>
 <body>
 
-<h2>Users list</h2>
+<div class="wrapper">
+    <h3>Users list</h3>
 
-<table class="table">
-    <th:block th:each="user : ${users}">
-        <tr>
-            <td><a th:href="@{/read/{id}(id=${user.getId()})}" th:text="${user.getFirstName()} + ' ' + ${user.getLastName()}"></a></td>
-            <td><a th:href="@{/update/{id}(id=${user.getId()})}">Update</a></td>
-            <td><a th:href="@{/delete/{id}(id=${user.getId()})}">Delete</a></td>
+    <table class="table">
+        <tr th:each="user : ${users}">
+            <td>
+                <a th:href="@{/read/{id}(id=${user.getId()})}" th:text="${user.getFirstName()} + ' ' + ${user.getLastName()}"></a>
+
+            </td>
+            <td>
+                <a class="button" th:href="@{/update/{id}(id=${user.getId()})}">Update</a>
+                <a class="button" th:href="@{/delete/{id}(id=${user.getId()})}">Delete</a>
+            </td>
         </tr>
-    </th:block>
-</table>
+    </table>
 
-<br>
+    <br>
 
-<a th:href="@{/create}">Create new User</a>
+    <a class="button" th:href="@{/create}">Create new User</a>
+</div>
 
 </body>
 </html>

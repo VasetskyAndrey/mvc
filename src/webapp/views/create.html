@@ -3,35 +3,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create</title>
+    <style>
+        .wrapper {
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Create User</h2>
-
-<br>
-
-<form th:action="@{/add}" th:method="post" th:object="${user}">
-
-    <table>
-        <tr>
-            <th><label for="firstName">Enter first name</label></th>
-            <th><label for="lastName">Enter last name</label></th>
-            <th><label for="age">Enter age</label></th>
-        </tr>
-        <tr>
-            <td><input type="text" th:field="*{firstName}" id="firstName"/></td>
-            <td><input type="text" th:field="*{lastName}" id="lastName"/></td>
-            <td><input type="number" th:field="*{age}" id="age"/></td>
-        </tr>
-
-    </table>
+<div class="wrapper">
+    <h3>Create User</h3>
 
     <br>
-    <br>
 
-    <input type="submit" value="Create user"/>
-</form>
+    <form th:action="@{/add}" th:method="post" th:object="${user}">
+
+        <table>
+            <tr>
+                <th><label for="firstName">Enter first name</label></th>
+                <th><label for="lastName">Enter last name</label></th>
+                <th><label for="age">Enter age</label></th>
+            </tr>
+            <tr>
+                <td><input type="text" th:field="*{firstName}" id="firstName"/></td>
+                <td><input type="text" th:field="*{lastName}" id="lastName"/></td>
+                <td><input type="number" th:field="*{age}" id="age"/></td>
+            </tr>
+
+        </table>
+
+        <br>
+        <br>
+
+        <input type="submit" value="Create user"/>
+    </form>
+</div>
 
 </body>
 </html>
